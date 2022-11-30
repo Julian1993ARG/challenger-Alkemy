@@ -8,7 +8,7 @@ import style from './home.module.css'
 
 export default function Home () {
   const data = useSelector(state => state.movies)
-  const {loading,setPage} = useGetMovies() // eslint-disable-line
+  const {loading,upPage} = useGetMovies() // eslint-disable-line
 
   if (loading) {
     return (
@@ -32,6 +32,7 @@ export default function Home () {
       }
         </div>
       </section>
+      <button onClick={upPage}> Get More</button>
     </div>
   )
 }

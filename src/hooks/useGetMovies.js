@@ -9,6 +9,9 @@ export default function useGetMovies () {
   const [state, setState] = useState({
     loading: true
   })// eslint-disable-line
+  const upPage = () => {
+    setPage(page + 1)
+  }
 
   const getMovies = async () => {
     const response = await urlApiFilms.get('movie/now_playing', {
@@ -31,6 +34,6 @@ export default function useGetMovies () {
 
   return {
     ...state,
-    setPage
+    upPage
   }
 }

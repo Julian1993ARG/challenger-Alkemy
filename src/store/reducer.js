@@ -26,7 +26,7 @@ export default function reducer (state = initialState, action) {
     case 'ADD_MOVIES':
       return {
         ...state,
-        movies: action.payload
+        movies: [...state.movies, ...action.payload]
       }
     default:
       return { ...state }

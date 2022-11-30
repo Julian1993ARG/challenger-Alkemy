@@ -10,8 +10,8 @@ min-height:650px;
 .favorite{
   position: absolute;
   right: 24px;
-  bottom: -3px;
-  font-size: 50px;
+  bottom: 5px;
+  font-size: 40px;
   cursor: pointer;
 }
 

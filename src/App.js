@@ -10,7 +10,7 @@ function App () {
   const cookies = new Cookies()
   const user = cookies.get('USER')
   useEffect(() => {
-    if (!user) return
+    // if (!user) return
     dispatch(loginUser(user))
   }, [user]) // eslint-disable-line
 

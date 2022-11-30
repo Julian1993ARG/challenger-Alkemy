@@ -1,10 +1,11 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import Cookies from 'universal-cookie'
 import style from './nav.module.css'
 import useSearchFilm from '../../hooks/searchFilm'
 
 export default function Nav () {
+  const location = useLocation()
   const searchFilm = useSearchFilm()
   const cookies = new Cookies()
   const logOut = () => {
@@ -14,6 +15,7 @@ export default function Nav () {
   const handleSubmit = (e) => {
     e.preventDefault()
     searchFilm(e.target[0].value)
+    e.target[0].value = ''
   }
   return (
     <header className='container-fluid mx-0 px-0 '>
@@ -35,10 +37,12 @@ export default function Nav () {
                 <a onClick={logOut} className={`nav-link text-danger ${style.logOut} fs-4`}>Log Out</a> {/* eslint-disable-line */}
               </li>
             </ul>
-            <form onSubmit={handleSubmit} className='d-flex'>
-              <input className='form-control me-2' type='search' placeholder='Search' aria-label='Search' />
-              <button className='btn btn-outline-success' type='submit'>Search</button>
-            </form>
+            {location.pathname === '/' && (
+              <form onSubmit={handleSubmit} className='d-flex'>
+                <input className='form-control me-2' type='search' placeholder='Search' aria-label='Search' />
+                <button className='btn btn-outline-success' type='submit'>Search</button>
+              </form>
+            )}
           </div>
         </div>
       </nav>
