@@ -25,7 +25,9 @@ export default function Home () {
 
           {
         data.map((movie) => (
-          <Card key={movie.id} {...movie} loading={loading} />
+          <div className='col-sm-6 col-md-4 col-lg-3 col-xl-2' key={movie.id}>
+            <Card key={movie.id} {...movie} loading={loading} />
+          </div>
         ))
       }
         </div>

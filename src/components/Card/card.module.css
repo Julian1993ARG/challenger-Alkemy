@@ -1,11 +1,11 @@
 .card{
-  width:  380px;
-  min-height:800px;
+min-height:650px;
+
 }
 
 .button{
-  position: absolute;
-  bottom: 13px;
+  position: relative;
+  bottom: -7px;
 }
 .favorite{
   position: absolute;

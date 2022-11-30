@@ -24,8 +24,6 @@ export default function LoginScreen () {
       try {
         // const response = await urlApi.post('login', values)
         const response = await alkemyApi.post('/', { email: values.email, password: values.password })
-
-        console.log(response)
         cookies.set('USER', response.data.token, { path: '/' })
         dispatch(loginUser(response.data))
         localStorage.setItem('USER', JSON.stringify(response.data))

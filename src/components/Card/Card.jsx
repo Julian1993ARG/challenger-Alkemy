@@ -10,8 +10,8 @@ export default function Card (props) {
   let { title, overview, id, poster_path: posterPatch } = props
   const favorites = useSelector(state => state.favorite)
   const isFavorite = favorites.some(favorite => favorite.id === id)
-  if (overview.length > 200) {
-    overview = overview.slice(0, 200) + '...'
+  if (overview.length > 150) {
+    overview = overview.slice(0, 150) + '...'
   }
   if (!posterPatch) return null
 
