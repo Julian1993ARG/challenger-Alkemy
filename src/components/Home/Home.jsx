@@ -32,7 +32,9 @@ export default function Home () {
       }
         </div>
       </section>
-      <button onClick={upPage}> Get More</button>
+      <div className='row d-flex justify-content-center my-3'>
+        <button type='button' class='btn btn-info col-6' onClick={upPage}>Get More</button>
+      </div>
     </div>
   )
 }
