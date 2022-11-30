@@ -7,23 +7,22 @@ export default function useGetMovies () {
   const dipatch = useDispatch()
   const [page, setPage] = useState(1)
   const [state, setState] = useState({
-    loading: false
+    loading: true
   })// eslint-disable-line
 
   const getMovies = async () => {
-    setState({
-      ...state,
-      loading: true
-    })
     const response = await urlApiFilms.get('movie/now_playing', {
       params: {
         page
       }
     })
-    setState({
-      loading: false
-    })
+
     dipatch(addMovies(response.data.results))
+    setTimeout(() => {
+      setState({
+        loading: false
+      })
+    }, 1000)
   }
 
   useEffect(() => {

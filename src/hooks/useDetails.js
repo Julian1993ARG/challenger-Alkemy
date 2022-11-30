@@ -16,11 +16,12 @@ export default function useMovieDetails (movieId) {
       movieDetailsPromise,
       castPromise
     ])
-    setState({
+    setState(prev => ({
+      ...prev,
       isLoading: false,
       movieFull: movieDetailsResp.data,
       cast: castPromiseResp.data.cast
-    })
+    }))
   }
 
   useEffect(() => {

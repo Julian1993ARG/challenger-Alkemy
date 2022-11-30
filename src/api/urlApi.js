@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const apiKey = '2467840ef6277c40fc52e843eca85a11'
+const apiKey = process.env.REACT_APP_API_KEY
 
 export const urlApi = axios.create({
   baseURL: 'http://localhost:4000/'

@@ -5,11 +5,11 @@
 
 .button{
   position: absolute;
-  bottom: 8px;
+  bottom: 13px;
 }
 .favorite{
   position: absolute;
-  right: 18px;
+  right: 24px;
   bottom: -3px;
   font-size: 50px;
   cursor: pointer;
@@ -17,4 +17,8 @@
 
 .heart{
   color: red;
+}
+.loadingImage{
+  height: 60%;
+  background-color: #868e96;
 }
